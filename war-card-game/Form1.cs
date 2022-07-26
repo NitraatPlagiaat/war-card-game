@@ -13,6 +13,9 @@ namespace war_card_game
     public partial class Form1 : Form
     {
         private static Random rand = new Random();
+        private static int[] deckPlayer1;
+        private static int[] deckPlayer2;
+        public static int cardAmnt = 26;
         public Form1()
         {
             InitializeComponent();
@@ -22,26 +25,84 @@ namespace war_card_game
         /// fill up the players cards
         /// </summary>
         /// <algo>
-        /// parse the text from cardsLeftCount 1 and 2 to an int
-        /// 
-        /// make an array cardPlayer1 to put the cards in
+        /// make an array deckPlayer1 to put the cards in
         /// make cardsLeftCount1 it's text the amount of added cards
         /// 
-        /// make an array cardPlayer2 to put the cards in
+        /// make an array deckPlayer2 to put the cards in
         /// make cardsLeftCount2 it's text the amount of added cards
         /// </algo>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            int cardsPlayer1 = Int32.Parse(cardsLeftCount1.Text);
-            int cardsPlayer2 = Int32.Parse(cardsLeftCount2.Text);
+            deckPlayer1 = cards.make(cardAmnt);
+            cardsLeftCount1.Text = deckPlayer1.Length.ToString();
 
-            int[] cardPlayer1 = cards.make();
-            cardsLeftCount1.Text = cards.addcards(cardPlayer1, cardsPlayer1);
+            deckPlayer2 = cards.make(cardAmnt);
+            cardsLeftCount2.Text = deckPlayer2.Length.ToString();
+        }
+        /// <summary>
+        /// Put the card from player 1 in the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playCard1_Click(object sender, EventArgs e)
+        {
+            switch (deckPlayer1[0])
+            {
+                case 1:
+                    cards1.Text = "A"; //Ace
+                    break;
+                case 11:
+                    cards1.Text = "J"; //Jack
+                    break;
+                case 12:
+                    cards1.Text = "Q"; //Queen
+                    break;
+                case 13:
+                    cards1.Text = "K"; //King
+                    break;
+                case 14:
+                    cards1.Text = "j"; //Joker
+                    break;
+                default:
+                    cards1.Text = deckPlayer1[0].ToString();
+                    break;
+            }
+            deckPlayer1 = cards.removecard(deckPlayer1);
+            cardsLeftCount1.Text = deckPlayer1.Length.ToString();
+        }
 
-            int[] cardPlayer2 = cards.make();
-            cardsLeftCount2.Text = cards.addcards(cardPlayer2, cardsPlayer2);
+        /// <summary>
+        /// put the card from player 2 in the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void playCard2_Click(object sender, EventArgs e)
+        {
+            switch (deckPlayer2[0])
+            {
+                case 1:
+                    cards2.Text = "A"; //Ace
+                    break;
+                case 11:
+                    cards2.Text = "J"; //Jack
+                    break;
+                case 12:
+                    cards2.Text = "Q"; //Queen
+                    break;
+                case 13:
+                    cards2.Text = "K"; //King
+                    break;
+                case 14:
+                    cards2.Text = "j"; //Joker
+                    break;
+                default:
+                    cards2.Text = deckPlayer2[0].ToString();
+                    break;
+            }
+            deckPlayer2 = cards.removecard(deckPlayer2);
+            cardsLeftCount2.Text = deckPlayer2.Length.ToString();
         }
     }
 }

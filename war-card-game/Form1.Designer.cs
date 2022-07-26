@@ -47,6 +47,7 @@ namespace war_card_game
             this.playCard1.TabIndex = 0;
             this.playCard1.Text = "Play card";
             this.playCard1.UseVisualStyleBackColor = true;
+            this.playCard1.Click += new System.EventHandler(this.playCard1_Click);
             // 
             // playCard2
             // 
@@ -56,6 +57,7 @@ namespace war_card_game
             this.playCard2.TabIndex = 1;
             this.playCard2.Text = "Play card";
             this.playCard2.UseVisualStyleBackColor = true;
+            this.playCard2.Click += new System.EventHandler(this.playCard2_Click);
             // 
             // cardsLeft
             // 
