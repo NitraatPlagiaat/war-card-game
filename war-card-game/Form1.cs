@@ -15,6 +15,8 @@ namespace war_card_game
         private static Random rand = new Random();
         private static int[] deckPlayer1;
         private static int[] deckPlayer2;
+        private static bool player1CardSet = false;
+        private static bool player2CardSet = false;
         public static int cardAmnt = 26;
         public Form1()
         {
@@ -103,6 +105,21 @@ namespace war_card_game
             }
             deckPlayer2 = cards.removecard(deckPlayer2);
             cardsLeftCount2.Text = deckPlayer2.Length.ToString();
+
+            player1CardSet = true;
+
+            compareCards(player1CardSet);
+        }
+
+        /// <summary>
+        /// Check if both players have set a card. if so, compare both cards
+        /// </summary>
+        private void compareCards(bool playerCardSet)
+        {
+            if (player1CardSet && player2CardSet)
+            {
+                playerCardSet = false;
+            }
         }
     }
 }
