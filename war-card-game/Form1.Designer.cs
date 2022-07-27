@@ -37,6 +37,7 @@ namespace war_card_game
             this.cardsLeftCount1 = new System.Windows.Forms.Label();
             this.cards2 = new System.Windows.Forms.Label();
             this.cards1 = new System.Windows.Forms.Label();
+            this.lbl_status = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // playCard1
@@ -113,11 +114,21 @@ namespace war_card_game
             this.cards1.TabIndex = 7;
             this.cards1.Text = "label2";
             // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.Location = new System.Drawing.Point(349, 403);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(35, 13);
+            this.lbl_status.TabIndex = 8;
+            this.lbl_status.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.cards1);
             this.Controls.Add(this.cards2);
             this.Controls.Add(this.cardsLeftCount1);
@@ -144,6 +155,7 @@ namespace war_card_game
         private System.Windows.Forms.Label cardsLeftCount1;
         private System.Windows.Forms.Label cards2;
         private System.Windows.Forms.Label cards1;
+        private System.Windows.Forms.Label lbl_status;
     }
 }
 

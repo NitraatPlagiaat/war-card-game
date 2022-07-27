@@ -9,6 +9,8 @@ namespace war_card_game
 {
     class cards
     {
+        //public static int[] value = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
+        public static string[] kind = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "j" };
         private static Random rand = new Random();
 
         /// <summary>
@@ -24,13 +26,13 @@ namespace war_card_game
         /// return card
         /// </algo>
         /// <returns></returns>
-        internal static int[] make(int cardAmnt)
+        internal static string[] make(int cardAmnt)
         {
-            int[] card = new int[cardAmnt];
+            string[] card = new string[cardAmnt];
             for (int i = 0; i < cardAmnt; i++)
             {
-                int newCard = rand.Next(1, 14);
-                card[i] = newCard;
+                int newCard = rand.Next(0, 13);
+                card[i] = kind[newCard];
             }
             return card;
         }
@@ -48,14 +50,29 @@ namespace war_card_game
         /// </algo>
         /// <param name="cardPlayer1"></param>
         /// <returns></returns>
-        internal static int[] removecard(int[] cardDeck)
+        internal static string[] removecard(string[] cardDeck)
         {
-            int[] newDeck = new int[cardDeck.Length - 1];
+            string[] newDeck = new string[cardDeck.Length - 1];
             for (int i = 1; i < cardDeck.Length; i++)
             {
                 newDeck[i - 1] = cardDeck[i];
             }
             return newDeck;
+        }
+
+        /// <summary>
+        /// Add the cards won by a player to the deck of that player
+        /// </summary>
+        /// <algo>
+        /// 
+        /// </algo>
+        /// <param name="deckPlayer1"></param>
+        /// <param name="text1"></param>
+        /// <param name="text2"></param>
+        /// <returns></returns>
+        internal static string[] addCardsToPlayer(string[] deckPlayer, string card1, string card2)
+        {
+            throw new NotImplementedException();
         }
     }
 }
