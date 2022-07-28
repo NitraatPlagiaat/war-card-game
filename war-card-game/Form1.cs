@@ -16,7 +16,7 @@ namespace war_card_game
         private static string[] deckPlayer2;
         private static bool player1CardSet = false;
         private static bool player2CardSet = false;
-        public static int cardAmnt = 10;
+        public static int cardAmnt = 2;
         public Form1()
         {
             InitializeComponent();
@@ -149,6 +149,16 @@ namespace war_card_game
                 }
                 player1CardSet = false;
                 player2CardSet = false;
+            }
+            else
+            {
+                if (deckPlayer1.Length == 0 || deckPlayer2.Length == 0)
+                {
+                    playCard1.Enabled = false;
+                    playCard2.Enabled = false;
+                    newGame.Enabled = true;
+                    lbl_status.Text = "What de fuck bro!";
+                }
             }
         }
 
