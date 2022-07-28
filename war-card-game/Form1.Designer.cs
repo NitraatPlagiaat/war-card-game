@@ -38,11 +38,12 @@ namespace war_card_game
             this.cards2 = new System.Windows.Forms.Label();
             this.cards1 = new System.Windows.Forms.Label();
             this.lbl_status = new System.Windows.Forms.Label();
+            this.newGame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // playCard1
             // 
-            this.playCard1.Location = new System.Drawing.Point(331, 346);
+            this.playCard1.Location = new System.Drawing.Point(201, 346);
             this.playCard1.Name = "playCard1";
             this.playCard1.Size = new System.Drawing.Size(75, 23);
             this.playCard1.TabIndex = 0;
@@ -52,7 +53,7 @@ namespace war_card_game
             // 
             // playCard2
             // 
-            this.playCard2.Location = new System.Drawing.Point(331, 52);
+            this.playCard2.Location = new System.Drawing.Point(201, 52);
             this.playCard2.Name = "playCard2";
             this.playCard2.Size = new System.Drawing.Size(75, 23);
             this.playCard2.TabIndex = 1;
@@ -63,7 +64,7 @@ namespace war_card_game
             // cardsLeft
             // 
             this.cardsLeft.AutoSize = true;
-            this.cardsLeft.Location = new System.Drawing.Point(90, 52);
+            this.cardsLeft.Location = new System.Drawing.Point(27, 52);
             this.cardsLeft.Name = "cardsLeft";
             this.cardsLeft.Size = new System.Drawing.Size(54, 13);
             this.cardsLeft.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace war_card_game
             // cardsLeftCount2
             // 
             this.cardsLeftCount2.AutoSize = true;
-            this.cardsLeftCount2.Location = new System.Drawing.Point(161, 52);
+            this.cardsLeftCount2.Location = new System.Drawing.Point(90, 52);
             this.cardsLeftCount2.Name = "cardsLeftCount2";
             this.cardsLeftCount2.Size = new System.Drawing.Size(13, 13);
             this.cardsLeftCount2.TabIndex = 3;
@@ -81,7 +82,7 @@ namespace war_card_game
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 346);
+            this.label1.Location = new System.Drawing.Point(27, 346);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 4;
@@ -90,7 +91,7 @@ namespace war_card_game
             // cardsLeftCount1
             // 
             this.cardsLeftCount1.AutoSize = true;
-            this.cardsLeftCount1.Location = new System.Drawing.Point(161, 346);
+            this.cardsLeftCount1.Location = new System.Drawing.Point(90, 346);
             this.cardsLeftCount1.Name = "cardsLeftCount1";
             this.cardsLeftCount1.Size = new System.Drawing.Size(13, 13);
             this.cardsLeftCount1.TabIndex = 5;
@@ -99,7 +100,7 @@ namespace war_card_game
             // cards2
             // 
             this.cards2.AutoSize = true;
-            this.cards2.Location = new System.Drawing.Point(349, 148);
+            this.cards2.Location = new System.Drawing.Point(218, 153);
             this.cards2.Name = "cards2";
             this.cards2.Size = new System.Drawing.Size(35, 13);
             this.cards2.TabIndex = 6;
@@ -108,7 +109,7 @@ namespace war_card_game
             // cards1
             // 
             this.cards1.AutoSize = true;
-            this.cards1.Location = new System.Drawing.Point(349, 231);
+            this.cards1.Location = new System.Drawing.Point(218, 223);
             this.cards1.Name = "cards1";
             this.cards1.Size = new System.Drawing.Size(35, 13);
             this.cards1.TabIndex = 7;
@@ -117,17 +118,29 @@ namespace war_card_game
             // lbl_status
             // 
             this.lbl_status.AutoSize = true;
-            this.lbl_status.Location = new System.Drawing.Point(349, 403);
+            this.lbl_status.Location = new System.Drawing.Point(198, 401);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(35, 13);
             this.lbl_status.TabIndex = 8;
             this.lbl_status.Text = "label2";
             // 
+            // newGame
+            // 
+            this.newGame.Enabled = false;
+            this.newGame.Location = new System.Drawing.Point(392, 201);
+            this.newGame.Name = "newGame";
+            this.newGame.Size = new System.Drawing.Size(75, 23);
+            this.newGame.TabIndex = 9;
+            this.newGame.Text = "New game";
+            this.newGame.UseVisualStyleBackColor = true;
+            this.newGame.Click += new System.EventHandler(this.newGame_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(497, 450);
+            this.Controls.Add(this.newGame);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.cards1);
             this.Controls.Add(this.cards2);
@@ -138,7 +151,7 @@ namespace war_card_game
             this.Controls.Add(this.playCard2);
             this.Controls.Add(this.playCard1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "War 1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,6 +169,7 @@ namespace war_card_game
         private System.Windows.Forms.Label cards2;
         private System.Windows.Forms.Label cards1;
         private System.Windows.Forms.Label lbl_status;
+        private System.Windows.Forms.Button newGame;
     }
 }
 

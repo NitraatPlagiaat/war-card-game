@@ -9,7 +9,6 @@ namespace war_card_game
 {
     class cards
     {
-        //public static int[] value = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
         public static string[] kind = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "j" };
         private static Random rand = new Random();
 
@@ -64,7 +63,10 @@ namespace war_card_game
         /// Add the cards won by a player to the deck of that player
         /// </summary>
         /// <algo>
+        /// Get the length of deckPlayer
+        /// Make a new card deck from string array with the length of deckLength + 2
         /// 
+        /// loop over new
         /// </algo>
         /// <param name="deckPlayer1"></param>
         /// <param name="text1"></param>
@@ -72,7 +74,21 @@ namespace war_card_game
         /// <returns></returns>
         internal static string[] addCardsToPlayer(string[] deckPlayer, string card1, string card2)
         {
-            throw new NotImplementedException();
+            int deckLength = deckPlayer.Length;
+            string[] newDeck = new string[deckLength += 2];
+            for (int i = 0; i < newDeck.Length; i++)
+            {
+                if (i == deckPlayer.Length)
+                {
+                    newDeck[i] = card1;
+                    newDeck[i += 1] = card2; 
+                }
+                else
+                {
+                    newDeck[i] = deckPlayer[i];
+                }
+            }
+            return newDeck;
         }
     }
 }
